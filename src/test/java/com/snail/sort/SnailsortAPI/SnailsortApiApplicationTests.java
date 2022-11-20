@@ -8,6 +8,7 @@ import org.springframework.util.Assert;
 
 import java.util.Arrays;
 
+import static com.snail.sort.SnailsortAPI.service.SnailService.Sort;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -28,5 +29,11 @@ class SnailsortApiApplicationTests {
 		int id = ssr.getSnailArray().getTabId();
 		assertEquals(exceptId,id);
 		assertEquals(Arrays.toString(excepted), Arrays.toString(result));
+	}
+
+	@Test
+	public void testSortArray(){
+		int[][] result = ssr.getSnailArray().getTortTab();
+		Sort(result);
 	}
 }
