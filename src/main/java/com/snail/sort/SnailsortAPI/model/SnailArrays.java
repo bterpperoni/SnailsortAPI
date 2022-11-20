@@ -13,10 +13,6 @@ public class SnailArrays {
     private int[] tabTort;
     private int[][] tortTab;
 
-    public String ToString(){
-        return "ID : "+this.id+" / tab[] :"+this.tabTort+" / tab[][] : "+this.tortTab;
-    }
-
     // Constructor of SnailArrays Object
     public SnailArrays(String id, int[] tabTort, int[][] tortTab) {
         this.id = id;
@@ -27,7 +23,7 @@ public class SnailArrays {
     public SnailArrays() {
         this.tortTab = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
         this.tabTort = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        this.id = "1";
+        this.id = "2" ;
     }
 
     // Getter & Setter for tab's id ------------------------------------
