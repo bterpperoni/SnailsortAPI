@@ -14,7 +14,7 @@ public class SnailService {
     public static final int DUMP = -1;
 
     // This is for the testSnailArrays() test method
-    public SnailArrays getSnailArray(){
+    public static SnailArrays getSnailArray(){
         SnailArrays sa = new SnailArrays();
         return sa;
     }
@@ -22,13 +22,12 @@ public class SnailService {
      public static int[][] setArray(SnailArrays ar) {
          // Get the length of the current tab[]
          int[] array = ar.getTabTort();
+         // Declare array for convert to
          int[][] toSnArray = new int[][]{{}};
          int ra = array.length;
          if (isPoweroftwo(ra)) {
              // If ok for square Array, set the number of n ( for tab[n][n] )
              int wh = (int) Math.sqrt(ra);
-             // Declare array for convert to
-             toSnArray = new int[][]{{}};
              // First for set to add all height values of tab[] in tab[][]
              // Second for set to add all width values of tab[] in tab[][]
              for (int p = 0; p < ra; p++) {
@@ -41,7 +40,7 @@ public class SnailService {
          return toSnArray;
      }
 
-    // function to snail sort tab[][]
+    // function to snail sort tab[][], return a tab[] int
     public static int[] Sort(SnailArrays ar){
         int[][] array = ar.getTortTab();
         int sizeTab = array.length;
@@ -98,6 +97,5 @@ public class SnailService {
             return true;
         }
         return false;
-
     }
 }

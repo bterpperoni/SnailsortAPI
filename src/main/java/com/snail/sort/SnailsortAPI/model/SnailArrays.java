@@ -1,33 +1,42 @@
 package com.snail.sort.SnailsortAPI.model;
 
-// This class define template of valid array 
+import com.snail.sort.SnailsortAPI.controller.SnailController;
+
+import java.util.*;
+
+// This class define template of valid array
 public class SnailArrays {
-    
-    // Tab's id 
-    private int tabId;
+
+    // Tab's id
+    private String id;
     // Tab's content
     private int[] tabTort;
     private int[][] tortTab;
 
+    public String ToString(){
+        return "ID : "+this.id+" / tab[] :"+this.tabTort+" / tab[][] : "+this.tortTab;
+    }
+
     // Constructor of SnailArrays Object
-    public SnailArrays(int tabId, int[] tabTort) {
-        this.tabId = tabId;
+    public SnailArrays(String id, int[] tabTort, int[][] tortTab) {
+        this.id = id;
         this.tabTort = tabTort;
+        this.tortTab = tortTab;
     }
     // Default Constructor
     public SnailArrays() {
         this.tortTab = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
         this.tabTort = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        this.tabId = 0;
+        this.id = "1";
     }
 
     // Getter & Setter for tab's id ------------------------------------
-    public int getTabId() {
-        return this.tabId;
+    public String getId() {
+        return this.id;
     }
 
-    public void setTabId(int tabId) {
-        this.tabId = tabId;
+    public void setId(String id) {
+        this.id = id;
     }
     // --------------------------------------------------------------------
 
@@ -40,9 +49,8 @@ public class SnailArrays {
     // --------------------------------------------------------------------
 
     // Getter & Setter for 2d tab------------------------------------------
-    public int[][] getTortTab() {   return tortTab; }
+    public int[][] getTortTab() {  return tortTab; }
     public void setTortTab(int[][] tortTab) {   this.tortTab = tortTab; }
-    // --------------------------------------------------------------------
 }
 
     
