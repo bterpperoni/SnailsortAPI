@@ -1,14 +1,11 @@
 package com.snail.sort.SnailsortAPI.model;
 
-import com.snail.sort.SnailsortAPI.controller.SnailController;
-
-import java.util.*;
-
 // This class define template of valid array
 public class SnailArrays {
 
     // Tab's id
     private String id;
+
     // Tab's content
     private int[] tabTort;
     private int[][] tortTab;
@@ -21,8 +18,9 @@ public class SnailArrays {
     }
     // Default Constructor
     public SnailArrays() {
+
         this.tortTab = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
-        this.tabTort = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        this.tabTort = new int[]{1,2,3,4,5,6,7,8,9};
         this.id = "2" ;
     }
 

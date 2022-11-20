@@ -1,6 +1,7 @@
 package com.snail.sort.SnailsortAPI.service;
 
 import com.snail.sort.SnailsortAPI.model.SnailArrays;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
