@@ -8,10 +8,15 @@ public class SnailArrays {
     // Tab's content
     private int[] tabTort;
 
-    // Constructor of Arrays object
+    // Constructor of SnailArrays Object
     public SnailArrays(int tabId, int[] tabTort) {
         this.tabId = tabId;
         this.tabTort = tabTort;
+    }
+    // Default Constructor
+    public SnailArrays() {
+        this.tabTort = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        this.tabId = 0;
     }
 
     // Getter & Setter for tab's id ------------------------------------
@@ -25,14 +30,13 @@ public class SnailArrays {
     // --------------------------------------------------------------------
 
     // Getter & Setter for tab's content-----------------------------------
-    public int[] getTabTort() {
-        return this.tabTort;
-    }
+    public int[] getTabTort() { return this.tabTort; }
 
     public void setTabTort(int[] tabTort) {
         this.tabTort = tabTort;
     }
     // --------------------------------------------------------------------
+
 }
 
     
