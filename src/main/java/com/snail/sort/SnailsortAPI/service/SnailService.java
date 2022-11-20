@@ -19,26 +19,39 @@ public class SnailService {
         return sa;
     }
 
-    // public SnailArrays setSnailArray(int[] ar){
-    //     int ra = ar.length;
-    //     if(isPoweroftwo(ra)){
-    //         // Incoming ..
-    //         int wh = (int) Math.sqrt(ra);
-    //     }
-    // }
+     public static int[][] setArray(SnailArrays ar) {
+         // Get the length of the current tab[]
+         int[] array = ar.getTabTort();
+         int[][] toSnArray = new int[][]{{}};
+         int ra = array.length;
+         if (isPoweroftwo(ra)) {
+             // If ok for square Array, set the number of n ( for tab[n][n] )
+             int wh = (int) Math.sqrt(ra);
+             // Declare array for convert to
+             toSnArray = new int[][]{{}};
+             // First for set to add all height values of tab[] in tab[][]
+             // Second for set to add all width values of tab[] in tab[][]
+             for (int p = 0; p < ra; p++) {
+                 for (int u = 0; u < wh; u++) {
+                     toSnArray[p][u] = array[ra];
+                     ra--;
+                 }
+             }
+         }
+         return toSnArray;
+     }
 
     // function to snail sort tab[][]
-    public static int[] Sort(int[][] tab){
-
-        int sizeTab = tab.length;
-        int sizeOfFirstLine = tab[0].length;
+    public static int[] Sort(SnailArrays ar){
+        int[][] array = ar.getTortTab();
+        int sizeTab = array.length;
+        int sizeOfFirstLine = array[0].length;
         int isValidArray = sizeOfFirstLine * sizeTab;
 
         if(isPoweroftwo(isValidArray)){
             // Print tab[][] like a matrices
-            for(int[] number:tab){
-                System.out.println(Arrays.toString(number));
-            }
+            for(int[] number:array){
+                System.out.println(Arrays.toString(number));    }
 
             // result[] will have a length equals to the size (tab[][])²
             int[] result = new int[(int) Math.pow(sizeTab, 2)];
@@ -53,21 +66,21 @@ public class SnailService {
             for(int i = 0;i<result.length;++i){
                 // add width & height attribute to move to tab[][] efficiency
                 // Assign first element to result[]
-                result[i] = tab[y][x];
+                result[i] = array[y][x];
                 // then dump value
-                tab[y][x] = DUMP;
+                array[y][x] = DUMP;
                 y += ty;    // 1) y = 0 & ty = 0 | ..
                 x += tx;    // 1) x = 1 & tx = 1 | ..
 
                 // Ex. of size 3x3 : Next value --> tab[ y = 0 ][ x = 1 ] .. to tab[0][3], then
                 // we decrement x (tab[0][2]) to become in range tab & we increment y to get the value
                 // in the next sub array (tab[1][2]) ..
-                if(tx != 0 && (x>=sizeTab || x<0 || tab[y][x] == DUMP)){
+                if(tx != 0 && (x>=sizeTab || x<0 || array[y][x] == DUMP)){
                     x -= tx;
                     y += tx;
                     ty = tx;
                     tx = 0;
-                }else if(ty != 0 && (y>=sizeTab || y<0 || tab[y][x] == DUMP)){
+                }else if(ty != 0 && (y>=sizeTab || y<0 || array[y][x] == DUMP)){
                     x -= ty;
                     y -= ty;
                     tx = -ty;

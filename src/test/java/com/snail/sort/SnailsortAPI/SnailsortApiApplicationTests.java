@@ -1,5 +1,6 @@
 package com.snail.sort.SnailsortAPI;
 
+import com.snail.sort.SnailsortAPI.model.SnailArrays;
 import com.snail.sort.SnailsortAPI.service.SnailService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.util.Assert;
 import java.util.Arrays;
 
 import static com.snail.sort.SnailsortAPI.service.SnailService.Sort;
+import static com.snail.sort.SnailsortAPI.service.SnailService.setArray;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -33,7 +35,11 @@ class SnailsortApiApplicationTests {
 
 	@Test
 	public void testSortArray(){
-		int[][] result = ssr.getSnailArray().getTortTab();
-		Sort(result);
+		Sort(ssr.getSnailArray());
+	}
+
+	@Test
+	public void set2DArray(){
+		setArray(ssr.getSnailArray());
 	}
 }
