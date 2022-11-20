@@ -7,6 +7,7 @@ public class SnailArrays {
     private int tabId;
     // Tab's content
     private int[] tabTort;
+    private int[][] tortTab;
 
     // Constructor of SnailArrays Object
     public SnailArrays(int tabId, int[] tabTort) {
@@ -15,6 +16,7 @@ public class SnailArrays {
     }
     // Default Constructor
     public SnailArrays() {
+        this.tortTab = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
         this.tabTort = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
         this.tabId = 0;
     }
@@ -37,6 +39,10 @@ public class SnailArrays {
     }
     // --------------------------------------------------------------------
 
+    // Getter & Setter for 2d tab------------------------------------------
+    public int[][] getTortTab() {   return tortTab; }
+    public void setTortTab(int[][] tortTab) {   this.tortTab = tortTab; }
+    // --------------------------------------------------------------------
 }
 
     
